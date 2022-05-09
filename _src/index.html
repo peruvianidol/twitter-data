@@ -1,0 +1,17 @@
+---
+layout: base
+title: "peruvianidol's Tweets"
+---
+
+<h1>{{ title }}</h1>
+
+<p>{{ collections.tweets.length }} tweets</p>
+
+{% for tweet in collections.tweets %}
+  {% if tweet.data.favorite_count > 100 %}
+    <p>{{ tweet.data.full_text | safe }}</p>
+    <p><a href="{{ tweet.data.twitterUrl }}">{{ tweet.data.created_at }}</a></p>
+    <p>Favorited: {{ tweet.data.favorite_count }}</p>
+    <p>Retweeted: {{ tweet.data.retweet_count }}</p>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,22 @@
+---
+pagination:
+  data: tweets-all
+  size: 1
+  alias: data
+  addAllPagesToCollections: true
+permalink: "/{{ data.tweet.id_str }}/"
+layout: base
+tags: tweets
+eleventyComputed:
+  title: "@peruvianidol's tweet: {{ data.tweet.full_text }}"
+  twitterUrl: "https://twitter.com/peruvianidol/status/{{ data.tweet.id_str }}"
+  favorite_count: "{{ data.tweet.favorite_count }}"
+  retweet_count: "{{ data.tweet.retweet_count }}"
+  full_text: "{{ data.tweet.full_text }}"
+  created_at: "{{ data.tweet.created_at }}"
+---
+
+<p>{{ data.tweet.full_text }}</p>
+<p><a href="{{ twitterUrl }}">{{ data.tweet.created_at }}</a></p>
+<p>Favorited: {{ data.tweet.favorite_count }}</p>
+<p>Retweeted: {{ data.tweet.retweet_count }}</p>
