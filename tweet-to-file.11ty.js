@@ -7,7 +7,7 @@ class TweetsToFile {
         size: 1,
         alias: "tweet"
       },
-      permalink: data => `/${data.tweet.id_str}/`
+      permalink: data => `/${data.tweet.id}/`
     };
   }
 
